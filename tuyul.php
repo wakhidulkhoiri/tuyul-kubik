@@ -11,18 +11,18 @@ require_once("sdata-modules.php");
 
 ##############################################################################################################
 $config['deviceCode'] 		= '3551230xxxxxxx';
-$config['tk'] 				= 'ACGmNhoexxxxxx';
-$config['token'] 			= '35a7oDTxxxxxxx';
-$config['uuid'] 			= 'abdacad4xxxxxx4';
-$config['sign'] 			= '12988158bxxxxxx';
+$config['tk'] 			= 'ACGmNhoexxxxxx';
+$config['token'] 		= '35a7oDTxxxxxxx';
+$config['uuid'] 		= 'abdacad4xxxxxx4';
+$config['sign'] 		= '12988158bxxxxxx';
 $config['android_id'] 		= 'a28a65fbbxxxxxx';
 ##############################################################################################################
 
 
 for ($x=0; $x <1; $x++) { 
 	$url 	= array(); 
-	for ($cid=0; $cid <20; $cid++) { 
-		for ($page=0; $page <10; $page++) { 
+	for ($cid=0; $cid <30; $cid++) { 
+		for ($page=0; $page <20; $page++) { 
 			$url[] = array(
 				'url' 	=> 'http://api.beritaqu.net/content/getList?cid='.$cid.'&page='.$page,
 				'note' 	=> 'optional', 
@@ -39,7 +39,7 @@ for ($x=0; $x <1; $x++) {
 		echo "[+] Mengambil data artikel (CID : ".$cid.") ==> ".count(array_unique($artikel))."\r\n";
 	}
 	while (TRUE) {
-		$timeIn30Minutes = time() + 30*60;
+		$timeIn30Minutes = time() + 60*120;
 		$rnd 	= array_rand($artikel); 
 		$id 	= $artikel[$rnd];
 		$url[] = array(
@@ -59,7 +59,7 @@ for ($x=0; $x <1; $x++) {
 			}
 		}
 		if(count($artikel) == 0){
-			sleep(30);
+			sleep(120);
 			break;
 		}
 		sleep(5);
