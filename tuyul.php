@@ -24,7 +24,7 @@ for ($x=0; $x <1; $x++) {
 	for ($cid=0; $cid <30; $cid++) { 
 		for ($page=0; $page <20; $page++) { 
 			$url[] = array(
-				'url' 	=> 'http://api.beritaqu.net/content/getList?cid='.$cid.'&page='.$page,
+				'url' 	=> 'http://api.yogopro.com/api/content/video/lists?cid='.$cid.'&page='.$page,
 				'note' 	=> 'optional', 
 			);
 		}
@@ -43,7 +43,7 @@ for ($x=0; $x <1; $x++) {
 		$rnd 	= array_rand($artikel); 
 		$id 	= $artikel[$rnd];
 		$url[] = array(
-			'url' 	=> 'http://api.beritaqu.net/timing/read',
+			'url' 	=> 'http://api.yogopro.com/api/content/video',
 			'note' 	=> $rnd, 
 		);
 		$header[] = array(
